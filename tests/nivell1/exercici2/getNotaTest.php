@@ -1,6 +1,6 @@
 <?php  declare(strict_types=1);
 
-require './src/nivell1/exercici2/getNota.php';
+require_once './src/nivell1/exercici2/getNota.php';
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\CoversNothing;
@@ -41,6 +41,16 @@ final class getNotaTest extends TestCase {
     public function testTerceraDivisio(): void{
         $input = [33, 44, 3.76];
         $expectedOutput = "Tercera Divisió";
+
+        foreach($input as $key=>$value){
+            $result = getNota($value);
+            $this->assertSame($expectedOutput, $result, "Falla el valor: $value");
+        }
+    }
+
+    public function testReprovar(): void{
+        $input = [0, 22, 3.1];
+        $expectedOutput = "Cal reprovar.";
 
         foreach($input as $key=>$value){
             $result = getNota($value);

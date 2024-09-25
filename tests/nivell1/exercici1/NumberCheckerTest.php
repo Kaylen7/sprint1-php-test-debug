@@ -13,22 +13,12 @@ final class NumberCheckerTest extends TestCase {
     public function testIsEven(): void {
 
         $input = [10, 3, 0];
+        $expectedOutput = [true, false, true];
 
-        foreach($input as $key=>$n){
-            $checker = new NumberChecker($n);
+        foreach($input as $key=>$value){
+            $checker = new NumberChecker($value);
             $result = $checker->isEven();
-
-            switch($key){
-                case 0:
-                    $this->assertSame(true, $result);
-                    break;
-                case 1:
-                    $this->assertSame(false, $result);
-                    break;
-                case 2:
-                    $this->assertSame(true, $result);
-                    break;
-            }
+            $this->assertSame($expectedOutput[$key], $result);
         }
     }
 
@@ -36,22 +26,13 @@ final class NumberCheckerTest extends TestCase {
     public function testIsPositive(): void {
 
         $input = [10, -6, 0];
+        $expectedOutput = [true, false, false];
 
-        foreach($input as $key=>$n){
-            $checker = new NumberChecker($n);
+        foreach($input as $key=>$value){
+            $checker = new NumberChecker($value);
             $result = $checker->isPositive();
+            $this->assertSame($expectedOutput[$key], $result);
 
-            switch($key){
-                case 0:
-                    $this->assertSame(true, $result);
-                    break;
-                case 1:
-                    $this->assertSame(false, $result);
-                    break;
-                case 2:
-                    $this->assertSame(false, $result);
-                    break;
-            }
         }
     }
 }
