@@ -1,0 +1,24 @@
+{
+    "name": "sdm/nivell1",
+    "require-dev": {
+        "phpunit/phpunit": "^11.3",
+        "spatie/phpunit-watcher": "^1.24.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "": "tests/"
+        }
+      },
+    "authors": [
+        {
+            "name": "Sara DM",
+            "email": "ochuck.sdm@gmail.com"
+        }
+    ],
+    "require": {}
+}

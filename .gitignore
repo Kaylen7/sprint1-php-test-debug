@@ -1,0 +1,5 @@
+vendor/
+*.lock
+.DS_Store
+._*
+.phpunit.cache
